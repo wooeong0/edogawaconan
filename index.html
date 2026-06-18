@@ -1,0 +1,1214 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>우서연 사건파일</title>
+
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
+
+
+*{
+box-sizing:border-box;
+margin:0;
+padding:0;
+}
+
+
+body{
+width:100vw;
+height:100vh;
+overflow:hidden;
+font-family:'Jua',sans-serif;
+background:#111;
+}
+
+
+
+.screen{
+display:none;
+width:100vw;
+height:100vh;
+align-items:center;
+justify-content:center;
+}
+
+
+
+button{
+padding:14px 25px;
+border:none;
+border-radius:25px;
+cursor:pointer;
+background:#c1121f;
+color:white;
+font-size:20px;
+font-family:inherit;
+}
+
+
+
+
+
+
+/* 시작 */
+
+#intro{
+display:flex;
+
+background:
+linear-gradient(135deg,#14213d,#457b9d);
+
+}
+
+
+.panel{
+
+background:white;
+padding:50px;
+width:700px;
+border-radius:35px;
+text-align:center;
+
+box-shadow:0 15px 0 #000;
+
+}
+
+
+.panel h1{
+font-size:60px;
+color:#b00000;
+}
+
+
+.panel p{
+font-size:30px;
+margin:30px;
+line-height:1.7;
+}
+
+
+
+
+
+
+
+/* 사건 */
+
+
+#case{
+
+background:#d8c29d;
+
+}
+
+
+.file{
+
+width:850px;
+
+background:#fff0b8;
+
+padding:40px;
+
+border:5px solid #222;
+
+box-shadow:10px 10px #222;
+
+}
+
+
+
+.caseBox{
+
+background:white;
+
+margin-top:20px;
+
+padding:25px;
+
+border-radius:20px;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+}
+
+
+
+#done{
+
+display:none;
+
+margin-top:20px;
+
+color:green;
+
+font-size:25px;
+
+}
+
+
+
+
+
+
+/* 월드 */
+
+.world{
+
+display:none;
+
+width:100vw;
+height:100vh;
+
+flex-direction:column;
+
+justify-content:center;
+
+align-items:center;
+
+color:white;
+
+position:relative;
+
+}
+
+
+
+.back{
+
+position:absolute;
+top:20px;
+left:20px;
+
+background:white;
+color:black;
+
+}
+
+
+
+
+
+#drink{
+
+background:linear-gradient(135deg,#b8743c,#ffe2b5);
+
+}
+
+
+
+.card{
+
+background:white;
+color:#222;
+
+padding:50px;
+
+border-radius:30px;
+
+text-align:center;
+
+}
+
+
+
+
+
+.big{
+
+font-size:90px;
+
+}
+
+
+
+
+
+#band{
+
+background:#050505;
+
+}
+
+
+
+.stage{
+
+width:850px;
+height:400px;
+
+background:#111;
+
+border:3px solid #777;
+
+border-radius:30px;
+
+position:relative;
+
+}
+
+
+.guitar{
+
+font-size:100px;
+
+position:absolute;
+
+right:40%;
+
+bottom:50px;
+
+animation:shake .8s infinite alternate;
+
+}
+
+
+@keyframes shake{
+
+to{
+
+transform:rotate(15deg);
+
+}
+
+}
+
+
+
+
+
+
+
+#sport{
+
+background:linear-gradient(#55b8ff,#6bd66d);
+
+}
+
+
+
+.arena{
+
+width:850px;
+height:330px;
+
+background:#8bd450;
+
+border-radius:30px;
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+
+
+.runner{
+
+position:absolute;
+
+bottom:70px;
+
+font-size:45px;
+
+animation:run 5s infinite linear;
+
+}
+
+
+
+@keyframes run{
+
+from{left:-60px}
+
+to{left:850px}
+
+}
+
+
+
+
+.sports{
+
+display:grid;
+
+grid-template-columns:repeat(4,1fr);
+
+gap:10px;
+
+margin-top:20px;
+
+}
+
+
+
+.sports div{
+
+background:#ffffff66;
+
+padding:12px;
+
+border-radius:15px;
+
+}
+
+
+
+
+
+
+
+
+/* 게임 */
+
+#game{
+
+display:none;
+
+background:
+
+linear-gradient(#7dc8ff,#8fd15b);
+
+flex-direction:column;
+
+}
+
+
+
+
+.info{
+
+background:white;
+color:#222;
+
+padding:20px;
+
+border-radius:20px;
+
+margin-bottom:15px;
+
+text-align:center;
+
+}
+
+
+
+.map{
+
+width:900px;
+height:600px;
+
+
+background:
+
+linear-gradient(#bde0fe,#90be6d);
+
+
+border:8px solid white;
+
+border-radius:35px;
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+
+
+
+.character{
+
+position:absolute;
+
+font-size:45px;
+
+}
+
+
+
+#player{
+
+left:80px;
+top:450px;
+
+}
+
+
+
+#thief{
+
+left:700px;
+top:150px;
+
+}
+
+
+
+
+
+
+
+/* 엔딩 */
+
+#ending{
+
+
+background:
+
+linear-gradient(
+rgba(0,0,0,.5),
+rgba(0,0,0,.8)
+),
+
+
+repeating-linear-gradient(
+0deg,
+#9b4b42 0px,
+#9b4b42 40px,
+#542522 42px,
+#9b4b42 82px
+);
+
+
+}
+
+
+
+.result{
+
+width:850px;
+
+background:#f5e3ae;
+
+padding:50px;
+
+border-radius:30px;
+
+text-align:center;
+
+}
+
+
+
+.result h1{
+
+font-size:55px;
+
+color:#a00000;
+
+}
+
+
+
+#answer{
+
+font-size:70px;
+
+margin:40px;
+
+}
+
+
+
+#answer span{
+
+color:#c00000;
+
+}
+
+
+
+#profile{
+
+display:none;
+
+}
+
+
+
+.cards{
+
+display:grid;
+
+grid-template-columns:repeat(3,1fr);
+
+gap:15px;
+
+margin:30px;
+
+}
+
+
+
+.profileCard{
+
+background:white;
+
+padding:20px;
+
+border-radius:20px;
+
+}
+
+
+
+</style>
+</head>
+
+
+<body>
+
+
+
+
+<section id="intro" class="screen">
+
+
+<div class="panel">
+
+
+<h1>🔎 CASE FILE</h1>
+
+
+<p>
+
+당신의 필통을 훔쳐간
+
+<br>
+
+범인을 찾아라!
+
+</p>
+
+
+<button onclick="show('case')">
+
+조사 시작
+
+</button>
+
+
+</div>
+
+</section>
+
+
+
+
+
+
+
+
+
+<section id="case" class="screen">
+
+
+<div class="file">
+
+
+<h1>우서연 사건 기록</h1>
+
+
+
+<div class="caseBox">
+
+<h2>CASE #1 🥤 음료수</h2>
+
+<button onclick="openWorld('drink')">
+
+조사
+
+</button>
+
+</div>
+
+
+
+
+<div class="caseBox">
+
+<h2>CASE #2 🎸 밴드</h2>
+
+<button onclick="openWorld('band')">
+
+조사
+
+</button>
+
+</div>
+
+
+
+
+<div class="caseBox">
+
+<h2>CASE #3 🏃 운동</h2>
+
+<button onclick="openWorld('sport')">
+
+조사
+
+</button>
+
+</div>
+
+
+
+<div id="done">
+
+✔ 모든 사건 확인 완료
+
+<br><br>
+
+<button onclick="startGame()">
+
+도둑 추적
+
+</button>
+
+</div>
+
+
+
+</div>
+
+</section>
+
+
+
+
+
+
+
+
+
+<section id="drink" class="world">
+
+<button class="back" onclick="show('case')">
+
+뒤로
+
+</button>
+
+
+<div class="card">
+
+
+<h1>🥤 음료 사건</h1>
+
+<div class="big">
+
+🥤
+
+</div>
+
+<h2>
+
+범인은 음료수를 매우 좋아하는 듯 하다
+
+</h2>
+
+
+</div>
+
+</section>
+
+
+
+
+
+
+
+<section id="band" class="world">
+
+
+<button class="back" onclick="show('case')">
+
+뒤로
+
+</button>
+
+
+<h1>🎸 BAND ROOM</h1>
+
+
+<div class="stage">
+
+<div class="guitar">
+
+🎸
+
+</div>
+
+</div>
+
+
+<h2>
+
+범인은 밴드부에서 일렉기타로 활동하는 듯 하다
+
+</h2>
+
+
+<p>
+
+Nirvana · Radiohead · Silica Gel · Arctic Monkeys
+
+</p>
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<section id="sport" class="world">
+
+
+<button class="back" onclick="show('case')">
+
+뒤로
+
+</button>
+
+
+<h1>🏟 운동 사건</h1>
+
+
+<div class="arena">
+
+
+<div class="runner">
+
+⚽
+
+</div>
+
+
+</div>
+
+
+
+<h2>
+
+범인이 즐기는 운동
+
+</h2>
+
+
+<div class="sports">
+
+<div>⚽ 축구</div>
+<div>⛸ 쇼트트랙</div>
+<div>⛳ 골프</div>
+<div>🏊 수영</div>
+<div>🧘 필라테스</div>
+<div>🏄 서핑</div>
+<div>🏸 배드민턴</div>
+<div>🏓 탁구</div>
+<div>🥊 무에타이</div>
+<div>🧗 클라이밍</div>
+<div>🛹 스케이트보드</div>
+<div>⛷ 스키</div>
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+<section id="game" class="screen">
+
+
+<div class="info">
+
+<h2>🎮 게임 목표</h2>
+
+<p>
+
+당신의 필통을 훔쳐간 우서연을 잡아라!
+
+</p>
+
+<p>
+
+WASD 키로 이동
+
+</p>
+
+
+</div>
+
+
+
+
+<div class="map">
+
+
+<div id="player" class="character">
+
+🕵️
+
+</div>
+
+
+<div id="thief" class="character">
+
+😈
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<section id="ending" class="screen">
+
+
+<div class="result">
+
+
+<h1>
+
+🔎 사건 해결
+
+</h1>
+
+
+
+<div id="answer">
+
+범인은...
+
+<br>
+
+<span>
+
+우서연!
+
+</span>
+
+
+</div>
+
+
+
+<div id="profile">
+
+
+<h2>
+
+우서연 PROFILE
+
+</h2>
+
+
+
+<div class="cards">
+
+
+<div class="profileCard">
+
+🏃 운동
+
+</div>
+
+
+<div class="profileCard">
+
+🥤 음료수 사랑
+
+</div>
+
+
+<div class="profileCard">
+
+🎸 밴드
+
+</div>
+
+
+<div class="profileCard">
+
+🏠 인테리어
+
+</div>
+
+
+<div class="profileCard">
+
+✈️ 여행
+
+</div>
+
+
+<div class="profileCard">
+
+🔥 도전적
+
+</div>
+
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+
+
+
+
+
+
+<script>
+
+
+function show(id){
+
+document.querySelectorAll('.screen,.world')
+.forEach(e=>e.style.display='none');
+
+
+document.getElementById(id)
+.style.display='flex';
+
+
+}
+
+
+
+
+
+let checked={
+drink:false,
+band:false,
+sport:false
+};
+
+
+
+
+
+function openWorld(id){
+
+show(id);
+
+checked[id]=true;
+
+
+if(
+checked.drink &&
+checked.band &&
+checked.sport
+){
+
+document.getElementById('done')
+.style.display='block';
+
+}
+
+
+}
+
+
+
+
+
+function startGame(){
+
+show('game');
+
+}
+
+
+
+
+
+let px=80;
+let py=450;
+
+
+let tx=700;
+let ty=150;
+
+
+let keys={};
+
+
+
+document.addEventListener(
+'keydown',
+e=>keys[e.key.toLowerCase()]=true
+);
+
+
+document.addEventListener(
+'keyup',
+e=>keys[e.key.toLowerCase()]=false
+);
+
+
+
+
+
+
+
+function game(){
+
+if(
+document.getElementById('game').style.display==='flex'
+){
+
+if(keys.w)py-=6;
+if(keys.s)py+=6;
+if(keys.a)px-=6;
+if(keys.d)px+=6;
+
+
+
+let map=document.querySelector('.map');
+
+
+px=Math.max(0,Math.min(850,px));
+py=Math.max(0,Math.min(550,py));
+
+
+let player=document.getElementById('player');
+
+player.style.left=px+'px';
+player.style.top=py+'px';
+
+
+
+
+let a=player.getBoundingClientRect();
+
+let b=document.getElementById('thief')
+.getBoundingClientRect();
+
+
+
+if(
+Math.abs(a.x-b.x)<60 &&
+Math.abs(a.y-b.y)<60
+){
+
+finish();
+
+}
+
+
+}
+
+
+requestAnimationFrame(game);
+
+}
+
+
+game();
+
+
+
+
+
+
+setInterval(()=>{
+
+
+if(
+document.getElementById('game').style.display==='flex'
+){
+
+tx+=Math.random()*100-50;
+ty+=Math.random()*100-50;
+
+
+tx=Math.max(0,Math.min(850,tx));
+ty=Math.max(0,Math.min(550,ty));
+
+
+
+let t=document.getElementById('thief');
+
+t.style.left=tx+'px';
+t.style.top=ty+'px';
+
+}
+
+
+},500);
+
+
+
+
+
+
+
+function finish(){
+
+
+show('ending');
+
+
+setTimeout(()=>{
+
+
+document.getElementById('answer')
+.style.display='none';
+
+
+document.getElementById('profile')
+.style.display='block';
+
+
+},3000);
+
+
+}
+
+
+
+</script>
+
+
+
+</body>
+</html>
